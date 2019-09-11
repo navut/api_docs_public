@@ -15,7 +15,7 @@ This document illustrates how interact with NestReady events api.
 
 This process can be described into two steps:
 
-1) Subscribe to events for specific home_buyerss.
+1) Subscribe to events for specific home_buyers.
 
 2) Every time NestReady tracks an event from that home_buyers, NestReady will trigger a webhooks to your server.
 
@@ -128,7 +128,7 @@ page | yes | ex: 1
 
 
 ### Receiving
-After subscribing successfully, you will begin to receive events for your home_buyerss to the defined delivery_url.
+After subscribing successfully, you will begin to receive events for your home_buyers to the defined delivery_url.
 
 The follow schema is used for every event payload, the example of data is available [here](/#event-types)
 
@@ -299,7 +299,7 @@ page | yes | ex: 1
 
 
 ### Receiving
-After subscribing successfully, you will begin to receive events for your home_buyerss to the defined delivery_url.
+After subscribing successfully, you will begin to receive events for your home_buyers to the defined delivery_url.
 
 The follow schema is used for every event payload, the example of data is available [here](/#event-types)
 
