@@ -107,7 +107,7 @@ hours (meaning that events occured more than 48 hours ago won't be retrieved).
 {
   "current_page": 1,
   "total_pages_count": 0,
-  "listings_per_page": 100,
+  "events_per_page": 100,
   "events": []
 }
 ``````
@@ -278,7 +278,7 @@ hours (meaning that events occured more than 48 hours ago won't be retrieved).
 {
   "current_page": 1,
   "total_pages_count": 0,
-  "listings_per_page": 100,
+  "events_per_page": 100,
   "events": []
 }
 ``````
