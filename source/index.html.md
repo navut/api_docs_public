@@ -106,10 +106,28 @@ hours (meaning that events occured more than 48 hours ago won't be retrieved).
 ```json
 //BODY EXAMPLE
 {
-  "current_page": 1,
-  "total_pages_count": 0,
-  "events_per_page": 100,
-  "events": []
+    "current_page": 1,
+    "total_pages_count": 1,
+    "listings_per_page": 100,
+    "events": [
+        {
+            "id": "5d7bf7967b571f00122e295c",
+            "created_at": 1568405398,
+            "type": "listing_changed",
+            "data": {
+                "listing_diff": {
+                    "price_cents": [
+                        "2000000",
+                        "3000000"
+                    ],
+                    "status": [
+                        "peding",
+                        "active"
+                    ]
+                }
+            }
+        }
+    ]
 }
 ``````
 
