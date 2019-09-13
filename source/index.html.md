@@ -136,14 +136,37 @@ The follow schema is used for every event payload, the example of data is availa
 ```json
 //BODY EXAMPLE
 {
-  "id": <string>,
-  "type": <string>,
-  "metadata": <string>,
-  "partner_name": <string>,
-  "data": <hashmap>,
-  "created_at": <timestamp>,
+    "current_page": 1,
+    "total_pages_count": 1,
+    "events_per_page": 100,
+    "events": [
+        {
+            "id": "5d7bf6117b571f000f2e2989",
+            "created_at": 1568405009,
+            "type": "finance_requested",
+            "partner_name": "mybank",
+            "data": {
+                "listing": {
+                    "id": "listing_1",
+                    "bathrooms_count": "1",
+                    "bedrooms_count": "1",
+                    "description": "description",
+                    "listing_image_cover_url": "https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs",
+                    "mls_number": "1234mls",
+                    "price_cents": "100_000",
+                    "property_address": "full_address",
+                    "year_built": "1990"
+                }
+            },
+            "home_buyer": {
+                "id": "1234",
+                "email": "something@somewhere.co",
+                "phone": "(123)12341234"
+            },
+            "metadata": "user_id_in_your_system"
+        }
+    ]
 }
-
 ```
 
 #### HTTP Request
