@@ -292,18 +292,28 @@
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something@somewhere.co"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"listing_favorited"</span><span class="p">],</span><span class="w">
     </span><span class="s2">"delivery_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.your_url.com/nestready/events"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_id_in_your_system"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
+</span><span class="err">//RESPONSE</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delivery_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.your_url.com/nestready/events"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"listing_favorited"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"home_buyer_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Subscribe to events for the given home_buyers.</p>
 
 <p>Everytime you subscribe to an event, we will send you a notification with
-the just created webhook information to the defined <code>delivery_url</code>.</p>
+the just created webhook information to the defined <code>delivery_url</code>. The subscription will be serialized and the response will return the ID of that subscription as the first field.</p>
 <h4 id='http-request'>HTTP Request</h4>
 <p><code>POST /home_buyers/webhooks/subscriptions</code></p>
 <h4 id='parameters'>Parameters</h4>
@@ -330,9 +340,17 @@ the just created webhook information to the defined <code>delivery_url</code>.</
 <td>anything that you need to recognize this user in your system, or query in our API, we recommend that to be the user_id inside your system.</td>
 </tr>
 </tbody></table>
-<h3 id='unsubscribing'>Unsubscribing</h3>
-<p>Destroy a subscription, so that your system won&#39;t receive events for the given
-user.</p>
+<h3 id='unsubscribing'>Unsubscribing</h3><pre class="highlight json tab-json"><code><span class="err">//RESPONSE</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"deleted_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"conditions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_id_in_your_system"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">provide</span><span class="w"> </span><span class="err">either</span><span class="w"> </span><span class="err">metadata</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">subscription</span><span class="w"> </span><span class="err">id</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p>Destroy a subscription providing either metadata or id retuned when subscribing, so that your system won&#39;t receive events for the given user.</p>
 <h4 id='http-request-2'>HTTP Request</h4>
 <p><code>DELETE /home_buyers/webhooks/subscriptions</code></p>
 <h4 id='parameters-2'>Parameters</h4>
@@ -345,7 +363,12 @@ user.</p>
 </thead><tbody>
 <tr>
 <td>metadata</td>
-<td>yes</td>
+<td>either or</td>
+<td>-</td>
+</tr>
+<tr>
+<td>id</td>
+<td>either or</td>
 <td>-</td>
 </tr>
 </tbody></table>
@@ -460,7 +483,7 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something@somewhere.co"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_id_in_your_system"</span><span class="w">
@@ -473,7 +496,7 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something@somewhere.co"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"listing_favorited"</span><span class="p">],</span><span class="w">
@@ -486,7 +509,7 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something@somewhere.co"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -507,7 +530,7 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something@somewhere.co"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -528,7 +551,7 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something@somewhere.co"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -554,7 +577,7 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something@somewhere.co"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -580,7 +603,7 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something@somewhere.co"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -607,7 +630,7 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something@somewhere.co"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -632,11 +655,33 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This event is triggered once the user has already perfomed a property search and then saves it.</p>
+<h3 id='new_listings_from_saved_search'>new_listings_from_saved_search</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w"> 
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"saved_search_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"new_listings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"listing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"listing_1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bathrooms_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bedrooms_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"description"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"listing_image_cover_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mls_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234mls"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_cents"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100_000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"property_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full_address"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"year_built"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1990"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This event is triggered by listings recently created that matches a saved search&#39;s criteria.</p>
 <h3 id='saved_search_deleted'>saved_search_deleted</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w">
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something@somewhere.co"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -665,7 +710,7 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something@somewhere.co"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -694,7 +739,7 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something@somewhere.co"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-09 21:09:23 UTC"</span><span class="w"> </span><span class="p">},</span><span class="w">
