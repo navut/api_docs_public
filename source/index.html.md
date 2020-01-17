@@ -226,7 +226,7 @@ The follow schema is used for every event payload, the example of data is availa
 
 ## Event types
 
-### contact_request_requested
+### contact_requested
 ```json
 //DATA EXAMPLE
 {
