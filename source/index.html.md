@@ -236,11 +236,11 @@ The follow schema is used for every event payload, the example of data is availa
         "phone": "(123)12341234"
     },
     "data": {
-      "real_estate_agent": {
-        "email": "agent@email.com" ,
-        "name": "Agent Name" ,
-        "phone": "123-123-1234" ,
-      }
+        "real_estate_agent": {
+            "email": "agent@email.com" ,
+            "name": "Agent Name" ,
+            "phone": "123-123-1234" ,
+        }
     }
     "event_type": "real_estate_agent_message_sent",
     "partner_name": "mybank"
@@ -258,11 +258,11 @@ This event is triggered once a user sends a message to a real estate agent.
         "phone": "(123)12341234"
     },
     "data": {
-      "loan_officer": {
-        "email": "agent@email.com" ,
-        "name": "Agent Name" ,
-        "phone": "123-123-1234" ,
-      }
+        "loan_officer": {
+            "email": "agent@email.com" ,
+            "name": "Agent Name" ,
+            "phone": "123-123-1234" ,
+        }
     }
     "event_type": "loan_officer_message_sent",
     "partner_name": "mybank"
@@ -281,27 +281,27 @@ This event is triggered once a user sends a message to a loan officer.
     },
     "data": {
             "listing": {
-                    "id": "listing_1",
-                    "mls_number": "1234mls",
-                    "listing_image_cover_url": "https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs",
-                    "price_cents": "100_000",
-                    "bathrooms_count": "1",
-                    "bedrooms_count": "1",
-                    "year_built": "1990",
-                    "description": "description",
-                    "property": {
-                      "id":"5ddc17ffa6bbb19bcadd97b9",
-                      "country":"US",
-                      "latitude":"45",
-                      "longitude":"-45",
-                      "label":"123 Some street",
-                      "number":"123",
-                      "street":"Some street",
-                      "postal_code":"123456",
-                      "state_or_province":"US",
-                      "coordinates":"45;-45"
-                    }
-                  }
+                "id": "listing_1",
+                "mls_number": "1234mls",
+                "listing_image_cover_url": "https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs",
+                "price_cents": "100_000",
+                "bathrooms_count": "1",
+                "bedrooms_count": "1",
+                "year_built": "1990",
+                "description": "description",
+                "property": {
+                  "id":"5ddc17ffa6bbb19bcadd97b9",
+                  "country":"US",
+                  "latitude":"45",
+                  "longitude":"-45",
+                  "label":"123 Some street",
+                  "number":"123",
+                  "street":"Some street",
+                  "postal_code":"123456",
+                  "state_or_province":"US",
+                  "coordinates":"45;-45"
+                }
+            }
     },
     "event_type": "property_visit_requested",
     "partner_name": "mybank"
@@ -362,27 +362,27 @@ This event is triggered once the user favorites or pins a listing
     },
     "data": {
             "listing": {
-                    "id": "listing_1",
-                    "mls_number": "1234mls",
-                    "listing_image_cover_url": "https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs",
-                    "price_cents": "100_000",
-                    "bathrooms_count": "1",
-                    "bedrooms_count": "1",
-                    "year_built": "1990",
-                    "description": "description",
-                    "property": {
-                      "id":"5ddc17ffa6bbb19bcadd97b9",
-                      "country":"US",
-                      "latitude":"45",
-                      "longitude":"-45",
-                      "label":"123 Some street",
-                      "number":"123",
-                      "street":"Some street",
-                      "postal_code":"123456",
-                      "state_or_province":"US",
-                      "coordinates":"45;-45"
-                    }
-                  }
+                "id": "listing_1",
+                "mls_number": "1234mls",
+                "listing_image_cover_url": "https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs",
+                "price_cents": "100_000",
+                "bathrooms_count": "1",
+                "bedrooms_count": "1",
+                "year_built": "1990",
+                "description": "description",
+                "property": {
+                    "id":"5ddc17ffa6bbb19bcadd97b9",
+                    "country":"US",
+                    "latitude":"45",
+                    "longitude":"-45",
+                    "label":"123 Some street",
+                    "number":"123",
+                    "street":"Some street",
+                    "postal_code":"123456",
+                    "state_or_province":"US",
+                    "coordinates":"45;-45"
+                 }
+            }
     },
     "event_type": "listing_ufavorited",
     "partner_name": "mybank"
@@ -484,8 +484,8 @@ This event is triggered by listings recently created that matches a saved search
             "property_type": "all"
         }]
     },
-"event_type": "search_deleted",
-"partner_name": "mybank"
+    "event_type": "search_deleted",
+    "partner_name": "mybank"
 }
 ```
 This event is triggered when the user deletes a previously saved search.
@@ -495,9 +495,9 @@ This event is triggered when the user deletes a previously saved search.
 //DATA EXAMPLE
 {
     "home_buyer": {
-      "id": "1234",
-        "email": "home_buyer@email.com",
-        "phone": "(123)12341234"
+        "id": "1234",
+          "email": "home_buyer@email.com",
+          "phone": "(123)12341234"
     },
     "data": { "timestamp": "2019-09-09 21:09:23 UTC" },
     "event_type": "email_signed_up",
@@ -511,14 +511,14 @@ This event is triggered once the user provides its email for the first time usin
 //DATA EXAMPLE
 {
     "home_buyer": {
-      "id": "1234",
-        "email": "home_buyer@email.com",
-        "phone": "(123)12341234"
+        "id": "1234",
+            "email": "home_buyer@email.com",
+            "phone": "(123)12341234"
     },
     "data": {
-    "reset_password_url"=:"https://app.nestready.ai/finlocker/reset-password/P74c9GjButdP",
-    "timestamp"=>"2020-01-10 20:59:22 UTC"
-},
+        "reset_password_url"=:"https://app.nestready.ai/finlocker/reset-password/P74c9GjButdP",
+        "timestamp"=>"2020-01-10 20:59:22 UTC"
+    },
     "event_type": "nestfinder_reset_password",
     "partner_name": "mybank"
 }
