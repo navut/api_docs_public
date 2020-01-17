@@ -544,38 +544,6 @@ This event is triggered by listings recently created that matches a saved search
 ```
 This event is triggered when the user deletes a previously saved search.
 
-### saved_search_shared
-```json
-//DATA EXAMPLE
-{
-    "home_buyer": {
-        "id": "1234",
-        "email": "home_buyer@email.com",
-        "phone": "(123)12341234"
-    },
-    "data": {
-        "search": {
-            "id": "search_1",
-            "bathrooms_count": "1",
-            "bedrooms_count": "2",
-            "location": {
-                "id": "locationID",
-                "name": "boston",
-                "level": "metro"
-            },
-            "max_price_cents": "100_000_000",
-            "min_price_cents": "nil",
-            "listing_image_cover_url": "https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs",
-            "property_type": "apartment/condo"
-        }
-    },
-    "event_type": "saved_search_shared",
-    "partner_name": "mybank",
-    "journey_id": "j1"
-}
-```
-This event is triggered once the user has already perfomed a property search, saved it, then shares it.
-
 ### email_signed_up
 ```json
 //DATA EXAMPLE
