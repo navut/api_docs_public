@@ -226,7 +226,7 @@ The follow schema is used for every event payload, the example of data is availa
 
 ## Event types
 
-### contact_request_requested
+### real_estate_agent_message_sent
 ```json
 //DATA EXAMPLE
 {
@@ -235,16 +235,22 @@ The follow schema is used for every event payload, the example of data is availa
         "email": "home_buyer@email.com",
         "phone": "(123)12341234"
     },
-    "events": ["listing_favorited"],
-    "delivery_url": "https://api.your_url.com/nestready/events",
-    "metadata": "user_id_in_your_system"
+    "data": {
+      "real_estate_agent": {
+        "email": "agent@email.com" ,
+        "name": "Agent Name" ,
+        "phone": "123-123-1234" ,
+      }
+    }
+    "event_type": "real_estate_agent_message_sent",
+    "partner_name": "mybank"
 }
 ```
-This event is triggered once a user sends a request by any listed event.
+This event is triggered once a user sends a message to a real estate agent.
 
-### location_favorited
+### loan_officer_message_sent
 ```json
-//DATA EXAMPLE 
+//DATA EXAMPLE
 {
     "home_buyer": {
         "id": "1234",
@@ -252,44 +258,17 @@ This event is triggered once a user sends a request by any listed event.
         "phone": "(123)12341234"
     },
     "data": {
-            "location": {
-                "id": "1",
-                "name": "Boston",
-                "level": "place"
-            }
-
-    },
-    "event_type": "location_favorited",
-    "partner_name": "mybank",
-    "journey_id": "j1"
+      "loan_officer": {
+        "email": "agent@email.com" ,
+        "name": "Agent Name" ,
+        "phone": "123-123-1234" ,
+      }
+    }
+    "event_type": "loan_officer_message_sent",
+    "partner_name": "mybank"
 }
 ```
-
-This event is triggered once the user "pins" or favorites a location either from the dashboards listings, or from the location details itself.
-
-### location_unfavorited
-```json
-//DATA EXAMPLE 
-{
-    "home_buyer": {
-        "id": "1234",
-        "email": "home_buyer@email.com",
-        "phone": "(123)12341234"
-    },
-    "data": {
-            "location": {
-                "id": "1",
-                "name": "Boston",
-                "level": "place"
-            }
-
-    },
-    "event_type": "location_unfavorited",
-    "partner_name": "mybank",
-    "journey_id": "j1"
-}
-```
-This event is triggered once the user unfavorites or unpins a previously favorited location.
+This event is triggered once a user sends a message to a loan officer.
 
 ### property_visit_requested
 ```json
@@ -325,8 +304,7 @@ This event is triggered once the user unfavorites or unpins a previously favorit
                   }
     },
     "event_type": "property_visit_requested",
-    "partner_name": "mybank",
-    "journey_id": "j1"
+    "partner_name": "mybank"
 }
 ```
 
@@ -367,8 +345,7 @@ This event is triggered once the user clicks on the option to schedule a visit t
                   }
     },
     "event_type": "listing_favorited",
-    "partner_name": "mybank",
-    "journey_id": "j1"
+    "partner_name": "mybank"
 }
 ```
 
@@ -408,14 +385,13 @@ This event is triggered once the user favorites or pins a listing
                   }
     },
     "event_type": "listing_ufavorited",
-    "partner_name": "mybank",
-    "journey_id": "j1"
+    "partner_name": "mybank"
 }
 
 ```
 This evente is triggerend once the user unfavorites or unpins a favorited listing/property.
 
-### saved_search_updated
+### saved_search_created
 ```json
 //DATA EXAMPLE
 {
@@ -425,7 +401,7 @@ This evente is triggerend once the user unfavorites or unpins a favorited listin
         "phone": "(123)12341234"
     },
     "data": {
-        "searches": [{
+        "saved_search": {
             "id": "search_1",
             "bathrooms_count": "1",
             "bedrooms_count": "2",
@@ -438,11 +414,10 @@ This evente is triggerend once the user unfavorites or unpins a favorited listin
             "min_price_cents": "",
             "listing_image_cover_url": "https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs",
             "property_type": "all"
-        }]
+        }
     },
-"event_type": "saved_search_updated",
-"partner_name": "mybank",
-"journey_id": "j1"
+"event_type": "saved_search_created",
+"partner_name": "mybank"
 }
 ```
 This event is triggered once the user has already perfomed a property search and then saves it.
@@ -510,45 +485,12 @@ This event is triggered by listings recently created that matches a saved search
         }]
     },
 "event_type": "search_deleted",
-"partner_name": "mybank",
-"journey_id": "j1"
+"partner_name": "mybank"
 }
 ```
 This event is triggered when the user deletes a previously saved search.
 
-### saved_search_shared
-```json
-//DATA EXAMPLE
-{
-    "home_buyer": {
-        "id": "1234",
-        "email": "home_buyer@email.com",
-        "phone": "(123)12341234"
-    },
-    "data": {
-        "search": {
-            "id": "search_1",
-            "bathrooms_count": "1",
-            "bedrooms_count": "2",
-            "location": {
-                "id": "locationID",
-                "name": "boston",
-                "level": "metro"
-            },
-            "max_price_cents": "100_000_000",
-            "min_price_cents": "nil",
-            "listing_image_cover_url": "https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs",
-            "property_type": "apartment/condo"
-        }
-    },
-    "event_type": "saved_search_shared",
-    "partner_name": "mybank",
-    "journey_id": "j1"
-}
-```
-This event is triggered once the user has already perfomed a property search, saved it, then shares it.
-
-### email_signed_up
+### nestfinder_signup
 ```json
 //DATA EXAMPLE
 {
@@ -559,8 +501,26 @@ This event is triggered once the user has already perfomed a property search, sa
     },
     "data": { "timestamp": "2019-09-09 21:09:23 UTC" },
     "event_type": "email_signed_up",
-    "partner_name": "mybank",
-    "journey_id": "j1"
+    "partner_name": "mybank"
+}
+```
+This event is triggered once the user provides its email for the first time using one of the home_buyers forms or sharing a search.
+
+### nestfinder_reset_password
+```json
+//DATA EXAMPLE
+{
+    "home_buyer": {
+      "id": "1234",
+        "email": "home_buyer@email.com",
+        "phone": "(123)12341234"
+    },
+    "data": {
+    "reset_password_url"=:"https://app.nestready.ai/finlocker/reset-password/P74c9GjButdP",
+    "timestamp"=>"2020-01-10 20:59:22 UTC"
+},
+    "event_type": "nestfinder_reset_password",
+    "partner_name": "mybank"
 }
 ```
 This event is triggered once the user provides its email for the first time using one of the home_buyers forms or sharing a search.
@@ -694,3 +654,18 @@ After subscribing to the event, whenever an event related to the subscribed home
 This event is triggered when a property has an update. In this data example, the previous price for this property was 100000, then it was updated to 100001.
 
 <aside class="success">The possible statuses for listings are: [active, cancelled, closed, expired, pendind, withdrawn]</aside>
+
+
+# Changelog
+
+## 01/17/2020
+
+Events add/removed/changed
+
+- For all events: We no longer have jorney_id
+- reset_password event added
+- email_signed_up changed to nestfinder_signup
+- contact_requested replaced by two new events: real_estate_agent_message_sent, loan_officer_message_sent
+- saved_search_updated replaced by saved_search_created. Now it contains a single search instead of a list
+- saved_search_shared removed 
+- location_favorited and location_unfavorited removed
