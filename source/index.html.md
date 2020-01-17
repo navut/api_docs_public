@@ -226,7 +226,7 @@ The follow schema is used for every event payload, the example of data is availa
 
 ## Event types
 
-### contact_requested
+### real_estate_agent_message_sent
 ```json
 //DATA EXAMPLE
 {
@@ -235,12 +235,40 @@ The follow schema is used for every event payload, the example of data is availa
         "email": "home_buyer@email.com",
         "phone": "(123)12341234"
     },
-    "events": ["listing_favorited"],
-    "delivery_url": "https://api.your_url.com/nestready/events",
-    "metadata": "user_id_in_your_system"
+    "data": {
+      "real_estate_agent": {
+        "email": "agent@email.com" ,
+        "name": "Agent Name" ,
+        "phone": "123-123-1234" ,
+      }
+    }
+    "event_type": "real_estate_agent_message_sent",
+    "partner_name": "mybank",
 }
 ```
-This event is triggered once a user sends a request by any listed event.
+This event is triggered once a user sends a message to a real estate agent.
+
+### loan_officer_message_sent
+```json
+//DATA EXAMPLE
+{
+    "home_buyer": {
+        "id": "1234",
+        "email": "home_buyer@email.com",
+        "phone": "(123)12341234"
+    },
+    "data": {
+      "loan_officer": {
+        "email": "agent@email.com" ,
+        "name": "Agent Name" ,
+        "phone": "123-123-1234" ,
+      }
+    }
+    "event_type": "loan_officer_message_sent",
+    "partner_name": "mybank",
+}
+```
+This event is triggered once a user sends a message to a loan officer.
 
 ### location_favorited
 ```json
