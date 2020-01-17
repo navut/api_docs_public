@@ -243,7 +243,7 @@ The follow schema is used for every event payload, the example of data is availa
       }
     }
     "event_type": "real_estate_agent_message_sent",
-    "partner_name": "mybank",
+    "partner_name": "mybank"
 }
 ```
 This event is triggered once a user sends a message to a real estate agent.
@@ -265,7 +265,7 @@ This event is triggered once a user sends a message to a real estate agent.
       }
     }
     "event_type": "loan_officer_message_sent",
-    "partner_name": "mybank",
+    "partner_name": "mybank"
 }
 ```
 This event is triggered once a user sends a message to a loan officer.
@@ -304,8 +304,7 @@ This event is triggered once a user sends a message to a loan officer.
                   }
     },
     "event_type": "property_visit_requested",
-    "partner_name": "mybank",
-    "journey_id": "j1"
+    "partner_name": "mybank"
 }
 ```
 
@@ -346,8 +345,7 @@ This event is triggered once the user clicks on the option to schedule a visit t
                   }
     },
     "event_type": "listing_favorited",
-    "partner_name": "mybank",
-    "journey_id": "j1"
+    "partner_name": "mybank"
 }
 ```
 
@@ -387,14 +385,13 @@ This event is triggered once the user favorites or pins a listing
                   }
     },
     "event_type": "listing_ufavorited",
-    "partner_name": "mybank",
-    "journey_id": "j1"
+    "partner_name": "mybank"
 }
 
 ```
 This evente is triggerend once the user unfavorites or unpins a favorited listing/property.
 
-### saved_search_updated
+### saved_search_created
 ```json
 //DATA EXAMPLE
 {
@@ -404,7 +401,7 @@ This evente is triggerend once the user unfavorites or unpins a favorited listin
         "phone": "(123)12341234"
     },
     "data": {
-        "searches": [{
+        "saved_search": {
             "id": "search_1",
             "bathrooms_count": "1",
             "bedrooms_count": "2",
@@ -417,11 +414,10 @@ This evente is triggerend once the user unfavorites or unpins a favorited listin
             "min_price_cents": "",
             "listing_image_cover_url": "https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs",
             "property_type": "all"
-        }]
+        }
     },
-"event_type": "saved_search_updated",
-"partner_name": "mybank",
-"journey_id": "j1"
+"event_type": "saved_search_created",
+"partner_name": "mybank"
 }
 ```
 This event is triggered once the user has already perfomed a property search and then saves it.
@@ -489,13 +485,12 @@ This event is triggered by listings recently created that matches a saved search
         }]
     },
 "event_type": "search_deleted",
-"partner_name": "mybank",
-"journey_id": "j1"
+"partner_name": "mybank"
 }
 ```
 This event is triggered when the user deletes a previously saved search.
 
-### email_signed_up
+### nestfinder_signup
 ```json
 //DATA EXAMPLE
 {
@@ -506,8 +501,7 @@ This event is triggered when the user deletes a previously saved search.
     },
     "data": { "timestamp": "2019-09-09 21:09:23 UTC" },
     "event_type": "email_signed_up",
-    "partner_name": "mybank",
-    "journey_id": "j1"
+    "partner_name": "mybank"
 }
 ```
 This event is triggered once the user provides its email for the first time using one of the home_buyers forms or sharing a search.
