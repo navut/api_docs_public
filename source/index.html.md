@@ -654,3 +654,18 @@ After subscribing to the event, whenever an event related to the subscribed home
 This event is triggered when a property has an update. In this data example, the previous price for this property was 100000, then it was updated to 100001.
 
 <aside class="success">The possible statuses for listings are: [active, cancelled, closed, expired, pendind, withdrawn]</aside>
+
+
+# Changelog
+
+## 01/17/2020
+
+Events add/removed/changed
+
+- For all events: We no longer have jorney_id
+- reset_password event added
+- email_signed_up changed to nestfinder_signup
+- contact_requested replaced by two new events: real_estate_agent_message_sent, loan_officer_message_sent
+- saved_search_updated replaced by saved_search_created. Now it contains a single search instead of a list
+- saved_search_shared removed 
+- location_favorited and location_unfavorited removed
