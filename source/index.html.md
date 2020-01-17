@@ -270,55 +270,6 @@ This event is triggered once a user sends a message to a real estate agent.
 ```
 This event is triggered once a user sends a message to a loan officer.
 
-### location_favorited
-```json
-//DATA EXAMPLE 
-{
-    "home_buyer": {
-        "id": "1234",
-        "email": "home_buyer@email.com",
-        "phone": "(123)12341234"
-    },
-    "data": {
-            "location": {
-                "id": "1",
-                "name": "Boston",
-                "level": "place"
-            }
-
-    },
-    "event_type": "location_favorited",
-    "partner_name": "mybank",
-    "journey_id": "j1"
-}
-```
-
-This event is triggered once the user "pins" or favorites a location either from the dashboards listings, or from the location details itself.
-
-### location_unfavorited
-```json
-//DATA EXAMPLE 
-{
-    "home_buyer": {
-        "id": "1234",
-        "email": "home_buyer@email.com",
-        "phone": "(123)12341234"
-    },
-    "data": {
-            "location": {
-                "id": "1",
-                "name": "Boston",
-                "level": "place"
-            }
-
-    },
-    "event_type": "location_unfavorited",
-    "partner_name": "mybank",
-    "journey_id": "j1"
-}
-```
-This event is triggered once the user unfavorites or unpins a previously favorited location.
-
 ### property_visit_requested
 ```json
 //DATA EXAMPLE 
