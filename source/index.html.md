@@ -506,6 +506,25 @@ This event is triggered when the user deletes a previously saved search.
 ```
 This event is triggered once the user provides its email for the first time using one of the home_buyers forms or sharing a search.
 
+### nestfinder_reset_password
+```json
+//DATA EXAMPLE
+{
+    "home_buyer": {
+      "id": "1234",
+        "email": "home_buyer@email.com",
+        "phone": "(123)12341234"
+    },
+    "data": {
+    "reset_password_url"=:"https://app.nestready.ai/finlocker/reset-password/P74c9GjButdP",
+    "timestamp"=>"2020-01-10 20:59:22 UTC"
+},
+    "event_type": "nestfinder_reset_password",
+    "partner_name": "mybank"
+}
+```
+This event is triggered once the user provides its email for the first time using one of the home_buyers forms or sharing a search.
+
 
 # Listing
 ## Webhook Subscriptions
