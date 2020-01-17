@@ -265,6 +265,14 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#changelog" class="toc-h1 toc-link" data-title="Changelog">Changelog</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#01-17-2020" class="toc-h2 toc-link" data-title="01/17/2020">01/17/2020</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
     </div>
     <div class="page-wrapper">
@@ -503,20 +511,7 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h4 id='http-request-5'>HTTP Request</h4>
 <p><code>POST delivery_url</code></p>
-<h2 id='event-types'>Event types</h2><h3 id='contact_request_requested'>contact_request_requested</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w">
-</span><span class="p">{</span><span class="w">
-    </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"listing_favorited"</span><span class="p">],</span><span class="w">
-    </span><span class="s2">"delivery_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.your_url.com/nestready/events"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_id_in_your_system"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This event is triggered once a user sends a request by any listed event.</p>
-<h3 id='location_favorited'>location_favorited</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w"> 
+<h2 id='event-types'>Event types</h2><h3 id='real_estate_agent_message_sent'>real_estate_agent_message_sent</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w">
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
@@ -524,20 +519,18 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
         </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boston"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"place"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"location_favorited"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"journey_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"j1"</span><span class="w">
+      </span><span class="s2">"real_estate_agent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"agent@email.com"</span><span class="w"> </span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agent Name"</span><span class="w"> </span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123-123-1234"</span><span class="w"> </span><span class="p">,</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"real_estate_agent_message_sent"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This event is triggered once the user &quot;pins&quot; or favorites a location either from the dashboards listings, or from the location details itself.</p>
-<h3 id='location_unfavorited'>location_unfavorited</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w"> 
+<p>This event is triggered once a user sends a message to a real estate agent.</p>
+<h3 id='loan_officer_message_sent'>loan_officer_message_sent</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w">
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
@@ -545,19 +538,17 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
         </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boston"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"place"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"location_unfavorited"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"journey_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"j1"</span><span class="w">
+      </span><span class="s2">"loan_officer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"agent@email.com"</span><span class="w"> </span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agent Name"</span><span class="w"> </span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123-123-1234"</span><span class="w"> </span><span class="p">,</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"loan_officer_message_sent"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This event is triggered once the user unfavorites or unpins a previously favorited location.</p>
+<p>This event is triggered once a user sends a message to a loan officer.</p>
 <h3 id='property_visit_requested'>property_visit_requested</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w"> 
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -590,8 +581,7 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
                   </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"property_visit_requested"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"journey_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"j1"</span><span class="w">
+    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This event is triggered once the user clicks on the option to schedule a visit to a property, either from the listings dashboards or from the property details itself.</p>
@@ -627,8 +617,7 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
                   </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"listing_favorited"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"journey_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"j1"</span><span class="w">
+    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This event is triggered once the user favorites or pins a listing</p>
@@ -664,13 +653,12 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
                   </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"listing_ufavorited"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"journey_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"j1"</span><span class="w">
+    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
 <p>This evente is triggerend once the user unfavorites or unpins a favorited listing/property.</p>
-<h3 id='saved_search_updated'>saved_search_updated</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w">
+<h3 id='saved_search_created'>saved_search_created</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w">
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
@@ -678,7 +666,7 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
         </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"searches"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"saved_search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search_1"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"bathrooms_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"bedrooms_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
@@ -691,11 +679,10 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
             </span><span class="s2">"min_price_cents"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"listing_image_cover_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"property_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"all"</span><span class="w">
-        </span><span class="p">}]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
-</span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"saved_search_updated"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"journey_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"j1"</span><span class="w">
+</span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"saved_search_created"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This event is triggered once the user has already perfomed a property search and then saves it.</p>
@@ -756,41 +743,11 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
         </span><span class="p">}]</span><span class="w">
     </span><span class="p">},</span><span class="w">
 </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search_deleted"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"journey_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"j1"</span><span class="w">
+</span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This event is triggered when the user deletes a previously saved search.</p>
-<h3 id='saved_search_shared'>saved_search_shared</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w">
-</span><span class="p">{</span><span class="w">
-    </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search_1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"bathrooms_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"bedrooms_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locationID"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boston"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metro"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"max_price_cents"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100_000_000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"min_price_cents"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nil"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"listing_image_cover_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"property_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"apartment/condo"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"saved_search_shared"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"journey_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"j1"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This event is triggered once the user has already perfomed a property search, saved it, then shares it.</p>
-<h3 id='email_signed_up'>email_signed_up</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w">
+<h3 id='nestfinder_signup'>nestfinder_signup</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w">
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
@@ -799,8 +756,23 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-09 21:09:23 UTC"</span><span class="w"> </span><span class="p">},</span><span class="w">
     </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email_signed_up"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"journey_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"j1"</span><span class="w">
+    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This event is triggered once the user provides its email for the first time using one of the home_buyers forms or sharing a search.</p>
+<h3 id='nestfinder_reset_password'>nestfinder_reset_password</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"reset_password_url"</span><span class="err">=</span><span class="p">:</span><span class="s2">"https://app.nestready.ai/finlocker/reset-password/P74c9GjButdP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timestamp"</span><span class="err">=&gt;</span><span class="s2">"2020-01-10 20:59:22 UTC"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+    </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nestfinder_reset_password"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This event is triggered once the user provides its email for the first time using one of the home_buyers forms or sharing a search.</p>
@@ -949,6 +921,18 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
 <p>This event is triggered when a property has an update. In this data example, the previous price for this property was 100000, then it was updated to 100001.</p>
 
 <aside class="success">The possible statuses for listings are: [active, cancelled, closed, expired, pendind, withdrawn]</aside>
+<h1 id='changelog'>Changelog</h1><h2 id='01-17-2020'>01/17/2020</h2>
+<p>Events add/removed/changed</p>
+
+<ul>
+<li>For all events: We no longer have jorney_id</li>
+<li>reset_password event added</li>
+<li>email_signed_up changed to nestfinder_signup</li>
+<li>contact_requested replaced by two new events: real_estate_agent_message_sent, loan_officer_message_sent</li>
+<li>saved_search_updated replaced by saved_search_created. Now it contains a single search instead of a list</li>
+<li>saved_search_shared removed </li>
+<li>location_favorited and location_unfavorited removed</li>
+</ul>
 
       </div>
       <div class="dark-box">
