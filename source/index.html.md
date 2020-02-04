@@ -236,11 +236,11 @@ The follow schema is used for every event payload, the example of data is availa
         "phone": "(123)12341234"
     },
     "data": {
-      "real_estate_agent": {
-        "email": "agent@email.com" ,
-        "name": "Agent Name" ,
-        "phone": "123-123-1234" ,
-      }
+        "real_estate_agent": {
+            "email": "agent@email.com" ,
+            "name": "Agent Name" ,
+            "phone": "123-123-1234" ,
+        }
     }
     "event_type": "real_estate_agent_message_sent",
     "partner_name": "mybank"
@@ -258,11 +258,11 @@ This event is triggered once a user sends a message to a real estate agent.
         "phone": "(123)12341234"
     },
     "data": {
-      "loan_officer": {
-        "email": "agent@email.com" ,
-        "name": "Agent Name" ,
-        "phone": "123-123-1234" ,
-      }
+        "loan_officer": {
+            "email": "agent@email.com" ,
+            "name": "Agent Name" ,
+            "phone": "123-123-1234" ,
+        }
     }
     "event_type": "loan_officer_message_sent",
     "partner_name": "mybank"
@@ -281,27 +281,27 @@ This event is triggered once a user sends a message to a loan officer.
     },
     "data": {
             "listing": {
-                    "id": "listing_1",
-                    "mls_number": "1234mls",
-                    "listing_image_cover_url": "https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs",
-                    "price_cents": "100_000",
-                    "bathrooms_count": "1",
-                    "bedrooms_count": "1",
-                    "year_built": "1990",
-                    "description": "description",
-                    "property": {
-                      "id":"5ddc17ffa6bbb19bcadd97b9",
-                      "country":"US",
-                      "latitude":"45",
-                      "longitude":"-45",
-                      "label":"123 Some street",
-                      "number":"123",
-                      "street":"Some street",
-                      "postal_code":"123456",
-                      "state_or_province":"US",
-                      "coordinates":"45;-45"
-                    }
-                  }
+                "id": "listing_1",
+                "mls_number": "1234mls",
+                "listing_image_cover_url": "https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs",
+                "price_cents": "100_000",
+                "bathrooms_count": "1",
+                "bedrooms_count": "1",
+                "year_built": "1990",
+                "description": "description",
+                "property": {
+                  "id":"5ddc17ffa6bbb19bcadd97b9",
+                  "country":"US",
+                  "latitude":"45",
+                  "longitude":"-45",
+                  "label":"123 Some street",
+                  "number":"123",
+                  "street":"Some street",
+                  "postal_code":"123456",
+                  "state_or_province":"US",
+                  "coordinates":"45;-45"
+                }
+            }
     },
     "event_type": "property_visit_requested",
     "partner_name": "mybank"
@@ -362,27 +362,27 @@ This event is triggered once the user favorites or pins a listing
     },
     "data": {
             "listing": {
-                    "id": "listing_1",
-                    "mls_number": "1234mls",
-                    "listing_image_cover_url": "https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs",
-                    "price_cents": "100_000",
-                    "bathrooms_count": "1",
-                    "bedrooms_count": "1",
-                    "year_built": "1990",
-                    "description": "description",
-                    "property": {
-                      "id":"5ddc17ffa6bbb19bcadd97b9",
-                      "country":"US",
-                      "latitude":"45",
-                      "longitude":"-45",
-                      "label":"123 Some street",
-                      "number":"123",
-                      "street":"Some street",
-                      "postal_code":"123456",
-                      "state_or_province":"US",
-                      "coordinates":"45;-45"
-                    }
-                  }
+                "id": "listing_1",
+                "mls_number": "1234mls",
+                "listing_image_cover_url": "https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs",
+                "price_cents": "100_000",
+                "bathrooms_count": "1",
+                "bedrooms_count": "1",
+                "year_built": "1990",
+                "description": "description",
+                "property": {
+                    "id":"5ddc17ffa6bbb19bcadd97b9",
+                    "country":"US",
+                    "latitude":"45",
+                    "longitude":"-45",
+                    "label":"123 Some street",
+                    "number":"123",
+                    "street":"Some street",
+                    "postal_code":"123456",
+                    "state_or_province":"US",
+                    "coordinates":"45;-45"
+                 }
+            }
     },
     "event_type": "listing_ufavorited",
     "partner_name": "mybank"
@@ -403,6 +403,84 @@ This evente is triggerend once the user unfavorites or unpins a favorited listin
     "data": {
         "saved_search": {
             "id": "search_1",
+            "max_price_cents": "450000",
+            "min_bathrooms_count": "1",
+            "min_bedrooms_count": "2",
+            "min_price_cents": "75000",
+            "name": "Clayton",
+            "notification_active": true,
+            "notification_intensity": "daily",
+            "property_types": ["House"],
+            "min_sqft": 750,
+            "max_sqft": 3500,
+            "min_year_built": 1900,
+            "max_year_built": 2019,
+            "saved_search_id": 141,
+            "location":
+            {
+                "id": "7a1b5861-e714-4217-a019-66f27cbdca5d",
+                "name": "Clayton, MO",
+                "level": "city"
+			      }            
+        }
+    },
+    "event_type": "saved_search_created",
+    "partner_name": "mybank"
+}
+```
+This event is triggered once the user has already perfomed a property search and then saves it.
+
+### saved_search_updated
+```json
+//DATA EXAMPLE
+{
+    "home_buyer": {
+        "id": "1234",
+        "email": "home_buyer@email.com",
+        "phone": "(123)12341234"
+    },
+    "data": {
+        "saved_search": {
+            "id": "search_1",
+            "max_price_cents": "450000",
+            "min_bathrooms_count": "1",
+            "min_bedrooms_count": "2",
+            "min_price_cents": "75000",
+            "name": "Clayton",
+            "notification_active": false,
+            "notification_intensity": "daily",
+            "property_types": ["House"],
+            "min_sqft": 750,
+            "max_sqft": 3500,
+            "min_year_built": 1900,
+            "max_year_built": 2019,
+            "saved_search_id": 141,
+            "location":
+            {
+                "id": "7a1b5861-e714-4217-a019-66f27cbdca5d",
+                "name": "Clayton, MO",
+                "level": "city"
+			      }            
+        }
+    },
+    "event_type": "saved_search_updated",
+    "partner_name": "mybank"
+}
+```
+This event is triggered once the user enable/disable notifications for a saved_search, or change the frequency.
+
+### saved_search_deleted
+```json
+//DATA EXAMPLE
+{
+    "home_buyer": {
+        "id": "1234",
+        "email": "home_buyer@email.com",
+        "phone": "(123)12341234"
+    },
+    "data": {
+        "searches": [{
+            "id": "search_1",
             "bathrooms_count": "1",
             "bedrooms_count": "2",
             "location": {
@@ -414,13 +492,13 @@ This evente is triggerend once the user unfavorites or unpins a favorited listin
             "min_price_cents": "",
             "listing_image_cover_url": "https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs",
             "property_type": "all"
-        }
+        }]
     },
-"event_type": "saved_search_created",
-"partner_name": "mybank"
+    "event_type": "search_deleted",
+    "partner_name": "mybank"
 }
 ```
-This event is triggered once the user has already perfomed a property search and then saves it.
+This event is triggered when the user deletes a previously saved search.
 
 ### new_listings_from_saved_search
 ```json
@@ -459,45 +537,14 @@ This event is triggered once the user has already perfomed a property search and
 
 This event is triggered by listings recently created that matches a saved search's criteria.
 
-### saved_search_deleted
-```json
-//DATA EXAMPLE
-{
-    "home_buyer": {
-        "id": "1234",
-        "email": "home_buyer@email.com",
-        "phone": "(123)12341234"
-    },
-    "data": {
-        "searches": [{
-            "id": "search_1",
-            "bathrooms_count": "1",
-            "bedrooms_count": "2",
-            "location": {
-                "id": "1",
-                "name": "boston",
-                "level": "place"
-            },
-            "max_price_cents": "100_000_000",
-            "min_price_cents": "",
-            "listing_image_cover_url": "https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs",
-            "property_type": "all"
-        }]
-    },
-"event_type": "search_deleted",
-"partner_name": "mybank"
-}
-```
-This event is triggered when the user deletes a previously saved search.
-
 ### nestfinder_signup
 ```json
 //DATA EXAMPLE
 {
     "home_buyer": {
-      "id": "1234",
-        "email": "home_buyer@email.com",
-        "phone": "(123)12341234"
+        "id": "1234",
+          "email": "home_buyer@email.com",
+          "phone": "(123)12341234"
     },
     "data": { "timestamp": "2019-09-09 21:09:23 UTC" },
     "event_type": "email_signed_up",
@@ -511,14 +558,14 @@ This event is triggered once the user provides its email for the first time usin
 //DATA EXAMPLE
 {
     "home_buyer": {
-      "id": "1234",
-        "email": "home_buyer@email.com",
-        "phone": "(123)12341234"
+        "id": "1234",
+            "email": "home_buyer@email.com",
+            "phone": "(123)12341234"
     },
     "data": {
-    "reset_password_url"=:"https://app.nestready.ai/finlocker/reset-password/P74c9GjButdP",
-    "timestamp"=>"2020-01-10 20:59:22 UTC"
-},
+        "reset_password_url"=:"https://app.nestready.ai/finlocker/reset-password/P74c9GjButdP",
+        "timestamp"=>"2020-01-10 20:59:22 UTC"
+    },
     "event_type": "nestfinder_reset_password",
     "partner_name": "mybank"
 }
@@ -657,6 +704,10 @@ This event is triggered when a property has an update. In this data example, the
 
 
 # Changelog
+
+## 02/04/2020
+
+- Add back saved_search_updated. Check homebuyer events for more details
 
 ## 01/17/2020
 
