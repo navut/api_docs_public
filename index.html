@@ -269,6 +269,9 @@
             <a href="#changelog" class="toc-h1 toc-link" data-title="Changelog">Changelog</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#02-04-2020" class="toc-h2 toc-link" data-title="02/04/2020">02/04/2020</a>
+                  </li>
+                  <li>
                     <a href="#01-17-2020" class="toc-h2 toc-link" data-title="01/17/2020">01/17/2020</a>
                   </li>
               </ul>
@@ -668,6 +671,78 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"saved_search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search_1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"max_price_cents"</span><span class="p">:</span><span class="w"> </span><span class="s2">"450000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"min_bathrooms_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"min_bedrooms_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"min_price_cents"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clayton"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"notification_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"notification_intensity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"daily"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"property_types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"House"</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"min_sqft"</span><span class="p">:</span><span class="w"> </span><span class="mi">750</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"max_sqft"</span><span class="p">:</span><span class="w"> </span><span class="mi">3500</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"min_year_built"</span><span class="p">:</span><span class="w"> </span><span class="mi">1900</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"max_year_built"</span><span class="p">:</span><span class="w"> </span><span class="mi">2019</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"saved_search_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">141</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"location"</span><span class="p">:</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7a1b5861-e714-4217-a019-66f27cbdca5d"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clayton, MO"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">            
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"saved_search_created"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This event is triggered once the user has already perfomed a property search and then saves it.</p>
+<h3 id='saved_search_updated'>saved_search_updated</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"saved_search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search_1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"max_price_cents"</span><span class="p">:</span><span class="w"> </span><span class="s2">"450000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"min_bathrooms_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"min_bedrooms_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"min_price_cents"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clayton"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"notification_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"notification_intensity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"daily"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"property_types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"House"</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"min_sqft"</span><span class="p">:</span><span class="w"> </span><span class="mi">750</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"max_sqft"</span><span class="p">:</span><span class="w"> </span><span class="mi">3500</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"min_year_built"</span><span class="p">:</span><span class="w"> </span><span class="mi">1900</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"max_year_built"</span><span class="p">:</span><span class="w"> </span><span class="mi">2019</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"saved_search_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">141</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"location"</span><span class="p">:</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7a1b5861-e714-4217-a019-66f27cbdca5d"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clayton, MO"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"city"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">            
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"saved_search_updated"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This event is triggered once the user enable/disable notifications for a saved_search, or change the frequency.</p>
+<h3 id='saved_search_deleted'>saved_search_deleted</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"searches"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search_1"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"bathrooms_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"bedrooms_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -679,13 +754,13 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
             </span><span class="s2">"min_price_cents"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"listing_image_cover_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"property_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"all"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="p">}]</span><span class="w">
     </span><span class="p">},</span><span class="w">
-</span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"saved_search_created"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="w">
+    </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search_deleted"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This event is triggered once the user has already perfomed a property search and then saves it.</p>
+<p>This event is triggered when the user deletes a previously saved search.</p>
 <h3 id='new_listings_from_saved_search'>new_listings_from_saved_search</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w"> 
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -719,34 +794,6 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This event is triggered by listings recently created that matches a saved search&#39;s criteria.</p>
-<h3 id='saved_search_deleted'>saved_search_deleted</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w">
-</span><span class="p">{</span><span class="w">
-    </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_buyer@email.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123)12341234"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"searches"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search_1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"bathrooms_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"bedrooms_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boston"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"place"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"max_price_cents"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100_000_000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"min_price_cents"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"listing_image_cover_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://listing-images.nestready.net/dArboFrG37bMhDjHxWUMBZ3vs"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"property_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"all"</span><span class="w">
-        </span><span class="p">}]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"event_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search_deleted"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"partner_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mybank"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This event is triggered when the user deletes a previously saved search.</p>
 <h3 id='nestfinder_signup'>nestfinder_signup</h3><pre class="highlight json tab-json"><code><span class="err">//DATA</span><span class="w"> </span><span class="err">EXAMPLE</span><span class="w">
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"home_buyer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -921,7 +968,11 @@ hours (meaning that events occured more than 48 hours ago won&#39;t be retrieved
 <p>This event is triggered when a property has an update. In this data example, the previous price for this property was 100000, then it was updated to 100001.</p>
 
 <aside class="success">The possible statuses for listings are: [active, cancelled, closed, expired, pendind, withdrawn]</aside>
-<h1 id='changelog'>Changelog</h1><h2 id='01-17-2020'>01/17/2020</h2>
+<h1 id='changelog'>Changelog</h1><h2 id='02-04-2020'>02/04/2020</h2>
+<ul>
+<li>Add back saved_search_updated. Check homebuyer events for more details</li>
+</ul>
+<h2 id='01-17-2020'>01/17/2020</h2>
 <p>Events add/removed/changed</p>
 
 <ul>
